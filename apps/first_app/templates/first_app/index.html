@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login and Registration</title>
+</head>
+    <body>
+        <form action="/login" method ="POST" class = "login">
+            {% csrf_token %}
+            <h3>Login</h3>
+            <p>Email: <input type="text" name="email"></p>
+            <p>Password: <input name="password" type="password"></p>
+            <p><input type="submit" name="login" value = "Login"></p>
+        </form>
+        {% if messages %}
+            {% for message in messages%}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <form action="/register" method ="POST">
+            {% csrf_token %}
+            <h2>Registration</h2> 
+            <p>First Name: <input type="text" name="first_name"></p>
+            <p>Last Name: <input type="text" name="last_name"></p>
+            <p>Email: <input type="text" name="email"></p>
+            <p>Password: <input name="password" type="password"></p>
+            <p>*Password should be at least 8 characters</p>
+            <p>Confirm Password: <input name="confirm_password" type="password"></p>
+            <p><input type="submit" name="register" value = "Register"></p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html;>
+<html>
+    <title>
+        Item information
+    </title>
+    <body>
+        <h2>
+            {{item.name}} 
+        </h2>
+        {%for y in likedusers%}
+        <p>
+            {{y.first_name}}
+        </p>
+        {%endfor%}
+        <p>
+            {{uploadedusers}}
+        </p>
+        <p><a href="/" name='logout'>Log out</a> </p>
+        <P><a href="/dashboard">Go back</a></P>
+    </body>
+</html>
